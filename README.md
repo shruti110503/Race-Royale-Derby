@@ -108,20 +108,6 @@ src/
 └── App.tsx             # Root application component
 ```
 
-## 🎨 Screenshots
-
-### Title Screen
-![Title Screen](screenshots/title-screen.png)
-
-### Horse Selection
-![Horse Selection](screenshots/horse-selection.png)
-
-### Live Race
-![Live Race](screenshots/live-race.png)
-
-### Results
-![Results](screenshots/results.png)
-
 ## 🔧 Configuration
 
 ### Environment Variables
