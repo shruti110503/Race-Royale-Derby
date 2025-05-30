@@ -1,0 +1,236 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 22% 95%;
+    --foreground: 20 14.3% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+
+    --primary: 248 90% 66%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+
+    --accent: 20 43.8% 43.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 248 90% 66%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+
+    --primary: 248 90% 66%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+
+    --accent: 20 43.8% 43.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif;
+  }
+
+  h1, h2, h3 {
+    @apply font-racing;
+  }
+}
+
+.track-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grass' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(1) rotate(0)'%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='%234D7C0F'/%3E%3Cpath d='M0 0L20 0L20 20L0 20Z' fill='%235D8C1F'/%3E%3Cpath d='M20 20L40 20L40 40L20 40Z' fill='%235D8C1F'/%3E%3C/pattern%3E%3Cpattern id='track' patternUnits='userSpaceOnUse' width='100' height='40' patternTransform='scale(1) rotate(0)'%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='%238B5A2B'/%3E%3Cpath d='M25 0L35 0L35 40L25 40Z' fill='%239B6A3B' opacity='0.5'/%3E%3Cpath d='M65 0L75 0L75 40L65 40Z' fill='%239B6A3B' opacity='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23grass)' height='200%25' width='100%25'/%3E%3Crect y='33%25' fill='url(%23track)' height='34%25' width='100%25'/%3E%3C/svg%3E");
+}
+
+.moving-track {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='track' patternUnits='userSpaceOnUse' width='100' height='40' patternTransform='scale(1) rotate(0)'%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='%238B5A2B'/%3E%3Cpath d='M25 0L35 0L35 40L25 40Z' fill='%239B6A3B' opacity='0.5'/%3E%3Cpath d='M65 0L75 0L75 40L65 40Z' fill='%239B6A3B' opacity='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23track)' height='100%25' width='100%25'/%3E%3C/svg%3E");
+  background-size: 200% 100%;
+}
+
+.moving-track-realistic {
+  background: linear-gradient(to bottom, 
+    #8B4513 0%, 
+    #A0522D 5%, 
+    #CD853F 10%,
+    #D2691E 90%, 
+    #A0522D 95%, 
+    #8B4513 100%
+  );
+}
+
+.race-overlay {
+  background: linear-gradient(rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.5) 100%);
+}
+
+.finish-line {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none'/%3E%3Crect width='100%25' height='100%25' fill='%23FFFFFF' fill-opacity='0.8'/%3E%3Cpattern id='checker' patternUnits='userSpaceOnUse' width='20' height='20'%3E%3Crect x='0' y='0' width='10' height='10' fill='%23000000'/%3E%3Crect x='10' y='10' width='10' height='10' fill='%23000000'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23checker)'/%3E%3C/svg%3E");
+}
+
+.track-lanes::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 19px,
+    rgba(255, 255, 255, 0.15) 19px,
+    rgba(255, 255, 255, 0.15) 20px
+  );
+}
+
+.track-texture {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.horse-silhouette {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60' fill='%23000000'%3E%3Cpath d='M95,30c-2.5-2.5-7.5-5-12.5-5c-2.5,0-5,0.8-6.2,2.5C73.8,25,72.5,22.5,70,20c-3.8-3.8-8.8-5-13.8-5c-3.8,0-7.5,1.2-10,3.8c-1.2-1.2-3.8-2.5-6.2-2.5c-1.2,0-2.5,0.5-3.8,1.2C33.8,15,31.2,12.5,27.5,10C23.8,7.5,18.8,5,12.5,5C8.8,5,5,6.2,2.5,8.8C0,11.2,0,15,0,18.8c0,5,1.2,10,5,13.8c1.2,1.2,2.5,2.5,4.5,3.8c0,1.2-0.8,3.8-0.8,5c0,3.8,2.5,7.5,6.2,8.8c3.8,1.2,8.8,0,11.2-2.5c1.2,2.5,3.8,5,7.5,5c2.5,0,5-1.2,6.2-3.8c2.5,1.2,5,1.2,7.5,1.2c3.8,0,7.5-0.8,11.2-2.5c2.5-1.2,5-3.8,6.2-6.2c1.2,1.2,3.8,2.5,6.2,2.5c2.5,0,5-1.2,6.2-3.8c1.2,1.2,3.8,2.5,6.2,2.5c5,0,10-3.8,10-8.8C97.5,33.8,96.2,31.2,95,30z M31.2,32.5c-1.2,0-2.5-1.2-2.5-2.5c0-1.2,1.2-2.5,2.5-2.5c1.2,0,2.5,1.2,2.5,2.5C33.8,31.2,32.5,32.5,31.2,32.5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+@keyframes gallop {
+  0%, 100% { transform: translateY(0) rotateX(0deg); }
+  25% { transform: translateY(-4px) rotateX(10deg); }
+  50% { transform: translateY(0) rotateX(0deg); }
+  75% { transform: translateY(3px) rotateX(-5deg); }
+}
+
+.animate-gallop {
+  animation: gallop 0.3s infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@keyframes race-bg {
+  0% { background-position: 0 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-race-bg {
+  animation: race-bg 15s linear infinite;
+}
+
+/* Add realistic dust effect behind horses */
+.realistic-horse::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 90%;
+  width: 30px;
+  height: 15px;
+  background: radial-gradient(ellipse at center, rgba(210, 180, 140, 0.8) 0%, rgba(210, 180, 140, 0) 70%);
+  border-radius: 50%;
+  filter: blur(3px);
+  opacity: 0.7;
+  animation: dust 0.6s infinite alternate;
+}
+
+@keyframes dust {
+  0% { 
+    transform: translateY(0) scale(0.8);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: translateY(-5px) scale(1.2);
+    opacity: 0.3;
+  }
+}
+/* Fix for text overlapping issues */
+* {
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Prevent text selection highlighting overlap */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  text-shadow: none;
+}
+
+/* Fix for large text elements */
+.text-6xl, .text-7xl, .text-8xl {
+  line-height: 1;
+}
+
+.text-4xl, .text-5xl {
+  line-height: 1.1;
+}
+
+.text-2xl, .text-3xl {
+  line-height: 1.2;
+}
+
+/* Ensure proper spacing for cards */
+.card-title {
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+/* Fix for button text */
+button {
+  line-height: 1.2;
+}
